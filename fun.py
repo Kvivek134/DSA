@@ -1,24 +1,53 @@
-# Arithmetic Operations Program without using functions
+class Calculator:
+    def addition(self, a, b):
+        return a + b
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-operator = input("Enter operator (+, -, *, /, %): ")
+    def subtraction(self, a, b):
+        return a - b
 
-if operator == '+':
-    print("Addition:", num1 + num2)
-elif operator == '-':
-    print("Subtraction:", num1 - num2)
-elif operator == '*':
-    print("Multiplication:", num1 * num2)
-elif operator == '/':
-    if num2 == 0:
-        print("Cannot divide by zero")
-    else:
-        print("Division:", num1 / num2)
-elif operator == '%':
-    if num2 == 0:
-        print("Cannot divide by zero")
-    else:
-        print("Remainder:", num1 % num2)
-else:
-    print("Invalid operator")
+    def multiplication(self, a, b):
+        return a * b
+
+    def division(self, a, b):
+         return a / b
+
+    def cube(self, a):
+        return a ** 3
+obj = Calculator()
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+print("5. Cube")
+
+choice = int(input("Enter your choice: "))
+
+match choice:
+    case 1:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        result = obj.addition(a, b)
+
+    case 2:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        result = obj.subtraction(a, b)
+
+    case 3:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        result = obj.multiplication(a, b)
+
+    case 4:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        result = obj.division(a, b)
+
+    case 5:
+        a = int(input("Enter number: "))
+        result = obj.cube(a)
+
+    case _:
+        result = "Invalid Choice"
+
+print("Answer =", result)
